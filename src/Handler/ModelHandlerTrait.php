@@ -174,7 +174,9 @@ trait ModelHandlerTrait
      * @return array An array of models
      * @throws AuthException|ResponseException
      */
-    public function search_read(string $model, array $criteria, array $fields = [], int $limit = 0, $order = '', array $context = [])
+    public function search_read(string $model, array $criteria, array $fields = [], int $limit = 0, $order = '', array $context = [
+        "lang" => "en_US"
+    ])
     {
         $response = $this->getModelService()->execute_kw(
             $this->db, $this->uid(), $this->password,
